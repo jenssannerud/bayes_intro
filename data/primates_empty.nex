@@ -1,0 +1,32 @@
+#NEXUS
+
+Begin data;
+Dimensions ntax=23 nchar=0;
+Format datatype=DNA missing=? gap=-;
+Matrix
+Saimiri_sciureus   
+Callicebus_donacophilus   
+Cebus_albifrons   
+Alouatta_palliata   
+Aotus_trivirgatus   
+Hylobates_lar   
+Pan_paniscus   
+Colobus_guereza   
+Chlorocebus_aethiops   
+Macaca_mulatta   
+Tarsius_syrichta   
+Galago_senegalensis   
+Otolemur_crassicaudatus   
+Perodicticus_potto   
+Loris_tardigradus   
+Nycticebus_coucang   
+Daubentonia_madagascariensis   
+Lepilemur_hubbardorum   
+Varecia_variegata_variegata   
+Microcebus_murinus   
+Cheirogaleus_major   
+Propithecus_coquereli   
+Lemur_catta   
+;
+End;
+
