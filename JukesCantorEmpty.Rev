@@ -103,7 +103,7 @@ treetrace2 = readTreeTrace("output/empty_run_2.trees", treetype="non-clock")
 #treetrace.summarize()
 
 map_tree = mapTree(treetrace1,"output/empty_run_1.tree")
-map_tree = mapTree(treetrace1,"output/empty_run_2.tree")
+map_tree = mapTree(treetrace2,"output/empty_run_2.tree")
 
 # you may want to quit RevBayes now
 # q()

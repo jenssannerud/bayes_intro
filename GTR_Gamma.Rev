@@ -128,8 +128,8 @@ treetrace2 = readTreeTrace("output/primates_cytb_GTR_Gamma_non_clock_run_2.trees
 # and get the summary of the tree trace
 #treetrace1.summarize()
 
-map_tree = mapTree(treetrace1,"output/primates_cytb_GTR_Gamma_non_clock_run_1.tree")
-map_tree = mapTree(treetrace1,"output/primates_cytb_GTR_Gamma_non_clock_run_2.tree")
+map_tree1 = mapTree(treetrace1,"output/primates_cytb_GTR_Gamma_non_clock_run_1.tree")
+map_tree2 = mapTree(treetrace2,"output/primates_cytb_GTR_Gamma_non_clock_run_2.tree")
 
 # you may want to quit RevBayes now
 # q()

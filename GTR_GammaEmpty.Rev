@@ -129,7 +129,7 @@ treetrace2 = readTreeTrace("output/primates_cytb_GTR_Gamma_empty_run_2.trees", t
 #treetrace1.summarize()
 
 map_tree = mapTree(treetrace1,"output/primates_cytb_GTR_Gamma_empty_run_1.tree")
-map_tree = mapTree(treetrace1,"output/primates_cytb_GTR_Gamma_empty_run_2.tree")
+map_tree = mapTree(treetrace2,"output/primates_cytb_GTR_Gamma_empty_run_2.tree")
 
 # you may want to quit RevBayes now
 # q()
