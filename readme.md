@@ -44,6 +44,10 @@ The output will be in a new `output` folder. Inspect the `.log` files with Trace
 
 Compare the parameter estimates and trees from the two different runs.
 
+## Jukes Cantor analysis, no burnin
+
+    rb JukesCantorNoBurn.Rev
+
 ## GTR analysis
 
 As above, but run:
