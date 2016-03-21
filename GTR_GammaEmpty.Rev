@@ -98,7 +98,7 @@ phylogeny := treeAssembly(topology, br_lens)
 seq ~ dnPhyloCTMC(tree=phylogeny, Q=Q, siteRates=gamma_rates, type="DNA")
 
 # attach the data
-# seq.clamp(data)
+seq.clamp(data)
 
 
 
@@ -117,8 +117,8 @@ monitors[3] = mnScreen(printgen=1000, TL)
 
 mymcmc = mcmc(mymodel, monitors, moves, nruns=2)
 
-mymcmc.burnin(generations=10000,tuningInterval=1000)
-mymcmc.run(generations=30000)
+# mymcmc.burnin(generations=10000,tuningInterval=1000)
+mymcmc.run(generations=40000, underPrior=true)
 
 
 # Now, we will analyze the tree output.
@@ -128,8 +128,8 @@ treetrace2 = readTreeTrace("output/primates_cytb_GTR_Gamma_empty_run_2.trees", t
 # and get the summary of the tree trace
 #treetrace1.summarize()
 
-map_tree = mapTree(treetrace1,"output/primates_cytb_GTR_Gamma_empty_run_1.tree")
-map_tree = mapTree(treetrace2,"output/primates_cytb_GTR_Gamma_empty_run_2.tree")
+# map_tree = mapTree(treetrace1,"output/primates_cytb_GTR_Gamma_empty_run_1.tree", burnin=1000)
+# map_tree = mapTree(treetrace2,"output/primates_cytb_GTR_Gamma_empty_run_2.tree", burnin=1000)
 
 # you may want to quit RevBayes now
 # q()
