@@ -117,7 +117,10 @@ monitors[3] = mnScreen(printgen=1000, TL)
 
 mymcmc = mcmc(mymodel, monitors, moves, nruns=2)
 
+# Rather than burn in now, we will remove the tree burn in later
 # mymcmc.burnin(generations=10000,tuningInterval=1000)
+
+# The underPrior=true flag removes the likelihood calculation, running mcmc under the prior only
 mymcmc.run(generations=40000, underPrior=true)
 
 
@@ -125,12 +128,15 @@ mymcmc.run(generations=40000, underPrior=true)
 # Let us start by reading in the tree trace
 treetrace1 = readTreeTrace("output/primates_cytb_GTR_Gamma_empty_run_1.trees", treetype="non-clock")
 treetrace2 = readTreeTrace("output/primates_cytb_GTR_Gamma_empty_run_2.trees", treetype="non-clock")
+
+
 # and get the summary of the tree trace
 #treetrace1.summarize()
 
+# Skip these steps, since they are really slow when the trees are poorly resolved (probably because there are so many bipartitions in the posterior)
 # map_tree = mapTree(treetrace1,"output/primates_cytb_GTR_Gamma_empty_run_1.tree", burnin=1000)
 # map_tree = mapTree(treetrace2,"output/primates_cytb_GTR_Gamma_empty_run_2.tree", burnin=1000)
 
 # you may want to quit RevBayes now
-# q()
+q()
 

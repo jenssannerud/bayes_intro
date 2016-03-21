@@ -117,6 +117,7 @@ monitors[3] = mnScreen(printgen=1000, TL)
 
 mymcmc = mcmc(mymodel, monitors, moves, nruns=2)
 
+# So that we can view the burnin, we will skip it here and apply it at mapTree.
 # mymcmc.burnin(generations=10000,tuningInterval=1000)
 mymcmc.run(generations=40000)
 
@@ -132,5 +133,5 @@ map_tree1 = mapTree(treetrace1,"output/primates_cytb_GTR_Gamma_run_1.tree", burn
 map_tree2 = mapTree(treetrace2,"output/primates_cytb_GTR_Gamma_run_2.tree", burnin=1000)
 
 # you may want to quit RevBayes now
-# q()
+q()
 
