@@ -34,7 +34,7 @@ You can run the analyses on oscar. Load the revbayes module with `module load re
 
 To install revbayes on your own linux machine, compile from the [source](https://github.com/revbayes/revbayes).
 
-## Set up and Introduction
+## Introduction
 
 Fork and clone this repository. `cd` to the repository directory on your computer. Answer the questions in the readme right in this file. Send a pull request when the assignment is complete.
 
