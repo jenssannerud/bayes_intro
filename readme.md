@@ -93,8 +93,11 @@ Examine the relationships of the primates under the JC model. Run the `JukesCant
 
 Inspect the parameter traces. Was 1000 samples (corresponding to 10000 generations) a sufficient burn in?
 
+Operating under visual inspection alone, the burnin was sufficient. The transients one might have expected from an un-burned-in run were nowhere to be seen.
+
 Compare the parameter estimates and trees from the two different runs. Did the runs converge (ie, are the trees and parameters drawn from the same posterior distribution)?
 
+The parameter estimates for both runs are highly similar, which would suggest that the trees have been drawn from the same distribution. It would be tempting to proclaim that they have converged - except that the trees look nothing alike. Be that as it may, none of the clades on either tree have been identified with high confidence. Thus both trees presumably differ due to many "floating branches" that obscure the actual topology of the trees
 
 ## GTR analysis
 
@@ -106,8 +109,11 @@ Inspect the parameter traces. Note that the gtr run has many more model paramete
 
 Was 1000 samples (corresponding to 10000 generations) a sufficient burn in?
 
+As before, the burnin appears to have eliminated potential meandering at the start, so it would seem to pass muster. The traces for each parameter are lacking in wild deviation or sudden jumps.
+
 Compare the parameter estimates and trees from the two different runs. Did the runs converge (ie, are the trees and parameters drawn from the same posterior distribution)?
 
+The parameters for both the runs are again highly similar. This time, the topologies are more similar. An observation of the node labels reveals a greater confidence in more of the clade placements, so it is with greater confidence that one can claim that the runs have converged.
 
 ## Running on empty
 
@@ -116,6 +122,8 @@ In the above analyses, the priors were set in the script and the data informed t
     rb GTR_GammaEmpty.Rev
 
 In Tracer, open the `.log` files from this run and the GTR run above. Compare the parameter estimates. How do the data (in the previous analysis) change the posteriors relative to running without data (in this analysis)?
+
+The means of the empty distributions are much larger than those of the non-empty runs; the empty runs also have much tighter variances and larger effective sample sizes. Furthermore, they require less auto-correlation time. One can conclude that having data in the previous analyses introduces more variability into the posterior, widening it, but also buttressing it by increasing the frequency of the median and mean of the distribution.
 
 Because there is a flat prior on the trees, there is a very large number of bipartitions in the posterior. We therefore don't bother creating a `.tree` file.
 
@@ -126,3 +134,4 @@ Copy any one of the three analysis files from above, add it to the git repo, and
 
 How did the change in the prior impact the results (ie, the posterior)?
 
+In my modifications I changed the pi vector in the GTR+Gamma script to lower the equilibrium frequency of A and T. This ended up actually not changing the posterior distribution significantly, in that most of the parameter values and the overall shape of the distribution remained the same. However, there was an interesting change in tree topology. The topologies of both trees from my script were identical, differing only in branch length. This conservation was not seen in any of the other runs. Further, the trees recovered are not identical to the trees calculated in the GTR+Gamma runs, and have generally a high degree of confidence in the clade placements. However, within clades, especially in the clade containing *Chlorocebus aethiops* and *Pan paniscus*, there is a low degree of confidence as to the organization of individual taxa.
